@@ -13,7 +13,7 @@ class Solution {
         // 二分法
         int left = 0, right = nums.length - 1;
         while(left <= right){
-            // 防止 left+right 整型溢出
+            // 防止 left + right 整型溢出
             int mid = left + (right - left) / 2;
             if(nums[mid] == target){
                 return mid;
