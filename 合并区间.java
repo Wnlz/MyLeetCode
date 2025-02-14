@@ -1,10 +1,12 @@
+/*
 以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回 一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间 。
 -- 示例 --
 输入：intervals = [[1,3],[2,6],[8,10],[15,18]]
 输出：[[1,6],[8,10],[15,18]]
 解释：区间 [1,3] 和 [2,6] 重叠, 将它们合并为 [1,6].
+*/
 
-1. 标准答案
+// 1. 标准答案
 class Solution {
     // 差分数组
     public int[][] merge(int[][] intervals) {
@@ -33,7 +35,7 @@ class Solution {
     }
 }
 
-2. 新颖答案
+// 2. 新颖答案
 public static int[][] merge(int[][] intervals) {
     if (intervals.length == 0) return intervals;
     Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));//按每行的第0列升序排序
@@ -52,7 +54,9 @@ public static int[][] merge(int[][] intervals) {
     return integerVector.toArray(new int[integerVector.size()][2]);//把vector转换成二维数组返回。
 }
 
+/*
 作者：陈陈陈晨晨
 链接：https://leetcode.cn/leetbook/read/array-and-string/c5tv3/?discussion=pJ59b3
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+*/
